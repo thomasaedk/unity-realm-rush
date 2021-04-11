@@ -72,3 +72,6 @@ crashlytics-build.properties
 
 # Visual Studio configuration file
 .vsconfig
+
+# TextMesh Pro files
+[Aa]ssets/TextMesh*Pro/
