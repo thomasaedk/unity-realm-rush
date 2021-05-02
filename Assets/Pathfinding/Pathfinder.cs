@@ -7,7 +7,10 @@ public class Pathfinder : MonoBehaviour
 {
     [SerializeField] private Vector2Int startCoordinates;
     [SerializeField] private Vector2Int destinationCoordinates;
-
+    public Vector2Int StartCoordinates => startCoordinates;
+    public Vector2Int DestinationCoordinates => destinationCoordinates;
+    
+    
     private Node startNode;
     private Node destinationNode;
     private Node currentSearchNode;
@@ -25,21 +28,25 @@ public class Pathfinder : MonoBehaviour
         if (_gridManager != null)
         {
             grid = _gridManager.Grid;
+            startNode = grid[startCoordinates];
+            destinationNode = grid[destinationCoordinates];
         }
     }
 
     void Start()
     {
-        startNode = _gridManager.Grid[startCoordinates];
-        destinationNode = _gridManager.Grid[destinationCoordinates];
-
         GetNewPath();
     }
 
     public List<Node> GetNewPath()
     {
+        return GetNewPath(startCoordinates);
+    }
+    
+    public List<Node> GetNewPath(Vector2Int coordinates)
+    {
         _gridManager.ResetNodes();
-        BreadthFirstSearch();
+        BreadthFirstSearch(coordinates);
         return BuildPath();        
     }
     
@@ -67,15 +74,18 @@ public class Pathfinder : MonoBehaviour
         }
     }
 
-    void BreadthFirstSearch()
+    void BreadthFirstSearch(Vector2Int coordinates)
     {
+        startNode.isWalkable = true;
+        destinationNode.isWalkable = true;
+        
         frontier.Clear();
         reached.Clear();
         
         bool isRunning = true;
         
-        frontier.Enqueue(startNode);
-        reached.Add(startCoordinates, startNode);
+        frontier.Enqueue(grid[coordinates]);
+        reached.Add(coordinates, grid[coordinates]);
 
         while (frontier.Count > 0 && isRunning)
         {
@@ -125,5 +135,10 @@ public class Pathfinder : MonoBehaviour
             return false;
         }
         return false;
+    }
+
+    public void NotifyReceivers()
+    {
+        BroadcastMessage("RecalculatePath", false, SendMessageOptions.DontRequireReceiver);
     }
 }

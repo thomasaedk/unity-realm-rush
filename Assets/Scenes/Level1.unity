@@ -2373,7 +2373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startCoordinates: {x: 0, y: 0}
-  destinationCoordinates: {x: 4, y: 2}
+  destinationCoordinates: {x: 10, y: 6}
 --- !u!4 &260947176 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6265972515696627654, guid: 3dfaf7d2cb2e5db4193162b76f4ff0b7, type: 3}
@@ -9062,6 +9062,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 488390492}
     m_Modifications:
+    - target: {fileID: 3618511546027172580, guid: 3e31ea6a74685ca4287ec5db4f6ed35d, type: 3}
+      propertyPath: isPlaceable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4408208268804965521, guid: 3e31ea6a74685ca4287ec5db4f6ed35d, type: 3}
       propertyPath: m_Name
       value: (0, 0)
@@ -9980,6 +9984,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1617246888}
     m_Modifications:
+    - target: {fileID: 3618511546027172580, guid: 3e31ea6a74685ca4287ec5db4f6ed35d, type: 3}
+      propertyPath: isPlaceable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4408208268804965521, guid: 3e31ea6a74685ca4287ec5db4f6ed35d, type: 3}
       propertyPath: m_Name
       value: (10, 6)
@@ -12354,7 +12362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f9c7049de4f7eb4bb34a504d904d14e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridSize: {x: 10, y: 10}
+  gridSize: {x: 15, y: 15}
   unityGridsize: 10
 --- !u!4 &1275485215
 Transform:
@@ -20388,7 +20396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7462212446643885701, guid: 71376aca05b443e46ae67a5d1b327dfc, type: 3}
       propertyPath: poolSize
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7462212446643885701, guid: 71376aca05b443e46ae67a5d1b327dfc, type: 3}
       propertyPath: spawnTimer
