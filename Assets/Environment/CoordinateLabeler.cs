@@ -37,7 +37,10 @@ public class CoordinateLabeler : MonoBehaviour
             label.enabled = true;
         }
         SetLabelColor();
-        ToggleLabels();
+        if (Debug.isDebugBuild)
+        {
+            ToggleLabels();
+        }
     }
 
     void ToggleLabels()
@@ -60,7 +63,7 @@ public class CoordinateLabeler : MonoBehaviour
             return;
         }
         
-        if (!node.isWalkable)
+        if (!node.isWalkable || node.isStartOrDestinationNode)
         {
             label.color = blockedColor;
         }

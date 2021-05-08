@@ -76,7 +76,9 @@ public class Pathfinder : MonoBehaviour
 
     void BreadthFirstSearch(Vector2Int coordinates)
     {
+        startNode.isStartOrDestinationNode = true;
         startNode.isWalkable = true;
+        destinationNode.isStartOrDestinationNode = true;
         destinationNode.isWalkable = true;
         
         frontier.Clear();
