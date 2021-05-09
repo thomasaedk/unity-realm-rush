@@ -73,5 +73,3 @@ crashlytics-build.properties
 # Visual Studio configuration file
 .vsconfig
 
-# Imported asset packs
-[Aa]ssets/AssetPacks/
